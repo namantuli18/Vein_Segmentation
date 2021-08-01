@@ -34,5 +34,7 @@ Receiving objects: 100% (2787/2787), 200.13 MiB | 2.95 MiB/s, done.
 Resolving deltas: 100% (652/652), done.
 Updating files: 100% (2096/2096), done.
 foo@bar:~$ python3 interface.py
+Running locally at: http://127.0.0.1:7860/
+This share link will expire in 24 hours. If you need a permanent link, visit: https://gradio.app/introducing-hosted (NEW!
 2021-08-01 13:42:27.386508: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 1800000000 Hz
 ```
