@@ -38,3 +38,5 @@ Running locally at: http://127.0.0.1:7860/
 This share link will expire in 24 hours. If you need a permanent link, visit: https://gradio.app/introducing-hosted (NEW!
 2021-08-01 13:42:27.386508: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 1800000000 Hz
 ```
+
+  <img src="https://github.com/namantuli18/Vein_Segmentation/blob/main/Screenshot%20from%202021-08-01%2013-47-28.png" width="400" height="300">
