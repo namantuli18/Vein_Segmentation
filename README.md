@@ -1,8 +1,8 @@
 # Vein_Segmentation
 
 ## Setup  
-  *To use the pickled model for inference, download the model weights from [link](https://drive.google.com/file/d/11wMm9ecgAKAZYJzM733wGRrjnlhHqHQp/view?usp=sharing)
-  *Place the pickled model in the directory 
+  * To use the pickled model for inference, download the model weights from [link](https://drive.google.com/file/d/11wMm9ecgAKAZYJzM733wGRrjnlhHqHQp/view?usp=sharing)
+  * Place the pickled model in the directory 
   
  ## To use CLI
  
