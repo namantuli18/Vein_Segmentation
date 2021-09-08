@@ -24,6 +24,7 @@ from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 from skimage import io #scikit-image
 import math
 import tqdm
+import seaborn as sns
 
 im_width = 384
 im_height = 384
@@ -176,17 +177,32 @@ img = img / 255
 img=np.expand_dims(img, axis=0)
 #img = img[np.newaxis, :, :, :]
 pred=model.predict(img)
-plt.figure(figsize=(12,12))
-plt.subplot(1,2,1)
-plt.imshow(np.squeeze(img1))
-plt.title('Original Image')
-plt.subplot(1,2,2)
-plt.imshow(np.squeeze(pred) > .5)
-plt.title('Prediction')
+Y_pred=np.round(pred)
+Y_val=np.round(np.array(img))
+FP = len(np.where(Y_pred - Y_val  == -1)[0])
+FN = len(np.where(Y_pred - Y_val  == 1)[0])
+TP = len(np.where(Y_pred + Y_val ==2)[0])
+TN = len(np.where(Y_pred + Y_val == 0)[0])
+cmat = [[TP, FN], [FP, TN]]
+print(cmat)
+sns.heatmap(cmat/np.sum(cmat), cmap="Reds", annot=True, fmt = '.2%', square=1,   linewidth=2.)
+plt.xlabel("Predicted Label")
+plt.ylabel("True Label")
+
+plt.savefig("cnf_{}".format(image_path))
 plt.show()
-op=np.squeeze(pred)*255
-op=cv2.resize(op,(im_height, im_width))
-cv2.imwrite('op_'+image_path,op)
+
+# plt.figure(figsize=(12,12))
+# plt.subplot(1,2,1)
+# plt.imshow(np.squeeze(img1))
+# plt.title('Original Image')
+# plt.subplot(1,2,2)
+# plt.imshow(np.squeeze(pred) > .5)
+# plt.title('Prediction')
+# plt.show()
+# op=np.squeeze(pred)*255
+# op=cv2.resize(op,(im_height, im_width))
+# cv2.imwrite('op_'+image_path,op)
 
 
 # for files in sorted(os.listdir('images')):
